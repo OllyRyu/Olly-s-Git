@@ -33,7 +33,7 @@ function addTask() {
     isComplete: false,
   };
   taskList.push(task);
-  console.log(taskList);
+  console.log(task);
   render();
 }
 
@@ -41,6 +41,7 @@ function render() {
   let list = [];
   if (mode == "all") {
     list = taskList;
+    console.log(list)
   } else if (mode == "ongoing" || mode == "done") {
     list = filterList;
   }
@@ -48,7 +49,7 @@ function render() {
 
   for (let i = 0; i < list.length; i++) {
     if (list[i].isComplete == true) {
-      resultHTML = `<div class = "task">
+      resultHTML += `<div class = "task">
             <div class = "task-done">${list[i].taskContent}</div>
             <div>
                 <button onclick = "toggleComplete('${list[i].id}')">Check</button>
@@ -72,10 +73,10 @@ function toggleComplete(id) {
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id == id) {
       taskList[i].isComplete = !taskList[i].isComplete;
+      console.log(taskList)
       break;
     }
-  }
-  render();
+  } render();
 }
 
 function filter(event) {
@@ -89,8 +90,9 @@ function filter(event) {
   document.getElementById("under-line").style.left =
     event.target.offsetLeft + "px";
   if (mode == "all") {
-    render();
     filterList = [];
+    render();
+    
   } else if (mode == "ongoing") {
     for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete == false) {
@@ -119,6 +121,6 @@ function deleteTask(id) {
     }
     console.log(taskList)
 
-   
+    
   } render()
 }
