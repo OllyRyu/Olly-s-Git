@@ -1,11 +1,15 @@
 body {
-  margin: 0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
   background-image: url("images/background1.jpg");
 }
 
 .container {
   background-color: white;
   min-height: 100vh;
+  padding-top: 2%;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
@@ -34,9 +38,9 @@ body {
   height: 4px;
   background-color: rgb(204, 190, 190);
   position: absolute;
-  width: 70px;
+  width: 50px;
   left: 0px;
-  top: 52px;
+  top: 56px;
   padding: 0px;
 }
 .task-done {
